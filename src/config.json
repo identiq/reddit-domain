@@ -3,5 +3,6 @@
 	"bodyLimit": "100kb",
 	"corsHeaders": ["Link"],
 	"REDDIT_API_URL": "https://www.reddit.com",
+	"REDDIT_SORTING" : "top",
 	"FETCH_UNTIL_DATE": "2017-09-10"
 }

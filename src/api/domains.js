@@ -7,7 +7,6 @@ import _ from 'lodash';
 export default ({config, db}) => {
 
   const UNTIL = moment(config.FETCH_UNTIL_DATE).startOf('day');
-  const SORTING = ['top', 'controversial'];
 
   let domain = Router();
 
@@ -24,7 +23,7 @@ export default ({config, db}) => {
       },
       (callback) => {
 
-        let url = `${config.REDDIT_API_URL}/r/${req.params.subreddit}/${_.first(SORTING)}.json?t=month${after ? '&after=' + after : ''}`;
+        let url = `${config.REDDIT_API_URL}/r/${req.params.subreddit}/${config.REDDIT_SORTING}.json?t=month${after ? '&after=' + after : ''}`;
 
         request(url, (error, response, body) => {
 

@@ -1,27 +1,13 @@
-Express & ES6 REST API Boilerplate
+Reddit domains
 ==================================
 
-[![bitHound Score](https://www.bithound.io/github/developit/express-es6-rest-api/badges/score.svg)](https://www.bithound.io/github/developit/express-es6-rest-api)
 
-This is a straightforward boilerplate for building REST APIs with ES6 and Express.
-
-- ES6 support via [babel](https://babeljs.io)
-- REST resources as middleware via [resource-router-middleware](https://github.com/developit/resource-router-middleware)
-- CORS support via [cors](https://github.com/troygoode/node-cors)
-- Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
-
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
+Get unique domains of subreddits until a date and sort both top and controversial.
 
 Getting Started
 ---------------
 
 ```sh
-# clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
-
-# Make it your own
-rm -rf .git && git init && npm init
 
 # Install dependencies
 npm install
@@ -31,11 +17,19 @@ PORT=8080 npm run dev
 
 # Start production server:
 PORT=8080 npm start
+
+curl -X GET \
+  http://localhost:8080/api/domains/programming
 ```
+Set your settings in the `src/config.json` file.
+
+You can replace `programming` url param by any topics of your choice.
+
+
 Docker Support
 ------
 ```sh
-cd express-es6-rest-api
+cd reddit-domain
 
 # Build your docker
 docker build -t es6/api-service .
@@ -51,11 +45,4 @@ docker run -p 8080:8080 es6/api-service
 
 ```
 
-Docker Demo
--------------------------
-It's supposed to be pretty easy to take your Docker to your favourite cloud service, here's a demo of what's our Dockerized bolierplate is like: [https://docker-deployment-yudfxfiaja.now.sh/api](https://docker-deployment-yudfxfiaja.now.sh/api)
 
-License
--------
-
-MIT
